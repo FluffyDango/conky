@@ -1,0 +1,49 @@
+conky.config = {
+    background = false,
+	update_interval = 600,
+
+	double_buffer = true,
+	no_buffers = true,
+	text_buffer_size = 2048,
+
+	alignment = 'bottom_right',
+	gap_x = 10,
+	gap_y = 50,
+
+	short_units = true,
+
+    minimum_height = 300,
+    minimum_width = 950,
+    maximum_width = 1200,
+
+    own_window = true,
+    own_window_argb_value = 230,
+    own_window_argb_visual = true,
+    own_window_class = "Conky",
+    own_window_type="override",
+    own_window_hints = "undecorated,below,sticky,skip_taskbar,skip_pager",
+    own_window_transparent = true,
+    own_window_colour="000000",
+
+	border_inner_margin = 0,
+	border_outer_margin = 1,
+    border_width = 5,
+
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+
+	override_utf8_locale = true,
+	use_xft = true,
+	uppercase = false,
+	imlib_cache_size = 0,
+
+	default_color = '#FFFFFF',
+
+};
+
+conky.text = [[
+${execpi 1800 ~/.conky/weather/get_weather.sh}\
+${image $HOME/.conky/weather/weather.png -p -0, 0}
+]];
